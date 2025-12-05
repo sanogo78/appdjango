@@ -1,0 +1,29 @@
+* {
+    font-family: Verdana;
+}
+
+#container{
+    width: 700px;
+    margin: auto;
+}
+
+hr {
+    border-top: 1px solid #84848410;
+}
+.message-header {
+    display: flex; /* affichage sans rretour a la ligne */
+}
+
+.message-username {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.message-created_at {
+    color: #424242;
+}
+
+.message-content {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+}
