@@ -1,0 +1,36 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static "css/style.css" %} ">
+
+    <title> Accueil </title>
+</head>
+<body>
+<header>
+    <div class="header_container">
+        <h1> FEED</h1>
+        <nav id="nav_bar">
+            <a href="/">Accueil</a>
+            <a href="/admin/">Admin</a>
+            {% if request.user.is_authenticated %}
+            <div class="avatar_container">
+                <span> {{ request.user.username }} </span>
+                <img class="user_avatar" src="{% static 'images/icons8-utilisateur-100.png'%}" alt="{{ request.user.username}}">
+            </div>
+            {% else %}
+            <a href="/admin/login/?next=/"> Se connecter</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+    <div id="container">
+    {% block content %}
+    
+    {% endblock content %}
+    </div>
+</body>
+</html>
